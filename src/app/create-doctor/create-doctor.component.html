@@ -1,0 +1,21 @@
+<div class="container">
+    <form #doctorForm="ngForm" (ngSubmit)="addDoctor(doctorForm.value)">
+        <div class="mb-3">
+          <label class="form-label">Doctor ID</label>
+          <input ngModel name = "doctorId" type="number" class="form-control" >
+        </div>
+        <div class="mb-3">
+          <label  class="form-label">Doctor Name</label>
+          <input ngModel name = "doctorName" type="text" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label  class="form-label">Specialization Field</label>
+            <input ngModel name = "specializationField" type="text" class="form-control">
+          </div>
+          <div class="mb-3">
+            <label  class="form-label">Patient Attended</label>
+            <input ngModel name = "numberOfPatientAttended" type="number" class="form-control">
+          </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+</div>

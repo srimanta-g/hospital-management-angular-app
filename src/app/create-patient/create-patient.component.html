@@ -1,0 +1,34 @@
+<div class="container">
+    <form #patientForm="ngForm" (ngSubmit)="addPatient(patientForm.value)">
+        <div class="mb-3">
+          <label class="form-label">Patient ID</label>
+          <input ngModel name = "patientId" type="number" class="form-control" >
+        </div>
+        <div class="mb-3">
+          <label  class="form-label">Patient Name</label>
+          <input ngModel name = "patientName" type="text" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label  class="form-label">Patient Age</label>
+            <input ngModel name = "patientAge" type="number" class="form-control">
+          </div>
+          <div class="mb-3">
+            <label  class="form-label">Doctor Attended</label>
+            <!-- <input ngModel name = "numberOfPatientAttended" type="number" class="form-control"> -->
+            <input ngModel list="doctor" name="doctorAttended">
+            <datalist id="doctor">
+              <option *ngFor="let item of data" value="{{item.doctorName}}">
+            </datalist>
+          </div>
+          <div class="mb-3">
+            <label  class="form-label">Date</label>
+            <input ngModel name = "date" type="text" class="form-control">
+          </div>
+          <div class="mb-3">
+            <label  class="form-label">Prescription</label>
+            <input ngModel name = "prescription" type="text" class="form-control">
+          </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+</div>
+

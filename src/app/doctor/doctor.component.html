@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+          <div ngbDropdown class="d-inline-block d-flex justify-content-center">
+            <button type="button" class="btn btn-primary" id="dropdownBasic1" ngbDropdownToggle>Select Doctor</button>
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+            <button *ngFor="let item of data" ngbDropdownItem (click)="getDoctorById(item.doctorId)">{{item.doctorName}}</button>
+              <!-- <button ngbDropdownItem>Another Action</button>
+              <button ngbDropdownItem>Something else is here</button> -->
+            </div>
+          </div>
+        </div>
+</div>
+
+<table class="table table-striped m-5" id="form">
+    <thead>
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Name</th>
+              <th scope="col">Specialization Feild</th>
+              <th scope="col">Patient Attended</th>
+              <th scope="col">Delete</th>
+            </tr>
+    </thead>
+    <tbody>
+                <tr>
+                  <td>{{singleData.doctorId}}</td>
+                  <td>{{singleData.doctorName}}</td>
+                  <td>{{singleData.specializationField}}</td>
+                  <td>{{singleData.numberOfPatientAttended}}</td>
+                  <td><a type="button" class="btn btn-warning" routerLink="/doctor" (click)="deleteDoctorById(singleData.doctorId)">Delete</a></td>
+                </tr>
+    </tbody>
+          
+</table>
+
+<div class="container mt-5 d-flex justify-content-center">
+    <button type="button" class="btn btn-success" routerLink="/add-doctor">Add new doctor</button>
+</div>
